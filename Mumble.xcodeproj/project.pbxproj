@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1D9C604FFFCD4D8EDB6DDE0B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD73390EEE7C5A07F5C860D /* Pods.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2801C35B11CA9F1A00E664E8 /* MUPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801C35A11CA9F1A00E664E8 /* MUPreferencesViewController.m */; };
 		280256381510D70D00178B08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 280256361510D70D00178B08 /* Localizable.strings */; };
@@ -213,6 +212,7 @@
 		B5EA66E71D47BEE700A5FA24 /* VoiceCallingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA66E51D47BEE700A5FA24 /* VoiceCallingVC.m */; };
 		B5FF00861D6C9E490087FE5D /* AskExpertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FF00851D6C9E490087FE5D /* AskExpertVC.m */; };
 		B5FF00891D6CE6B70087FE5D /* RatePopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FF00881D6CE6B70087FE5D /* RatePopUp.m */; };
+		D0EB293E9A6ACCE020DFFB50 /* Pods_Mumble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05F92B0B3A86533BCA4B548 /* Pods_Mumble.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,7 +240,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17E32637713BE0D8A5901D33 /* Pods.betadist.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.betadist.xcconfig; path = "Pods/Target Support Files/Pods/Pods.betadist.xcconfig"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Mumble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mumble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -504,9 +503,10 @@
 		28FAA36314D7551600F6D711 /* MKNumberBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKNumberBadgeView.m; path = Dependencies/MKNumberBadgeView/MKNumberBadgeView.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Mumble.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mumble.pch; path = Source/Mumble.pch; sourceTree = "<group>"; };
-		64EA90219C6E30CF41AFB921 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6AF8D4EFBB0152CE3AA38A84 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		39BE8EE69A30B957F2CB6A65 /* Pods-Mumble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mumble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mumble/Pods-Mumble.release.xcconfig"; sourceTree = "<group>"; };
+		72B904EB4B49000EBA666047 /* Pods-Mumble.betadist.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mumble.betadist.xcconfig"; path = "Pods/Target Support Files/Pods-Mumble/Pods-Mumble.betadist.xcconfig"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9E78A0C3D0FB1CBFD4F579C1 /* Pods-Mumble.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mumble.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Mumble/Pods-Mumble.appstore.xcconfig"; sourceTree = "<group>"; };
 		B50CC3EF1D6CEF0B00A076D0 /* CallHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CallHistory.h; path = NCCU/CallHistory.h; sourceTree = "<group>"; };
 		B50CC3F01D6CEF0B00A076D0 /* CallHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CallHistory.m; path = NCCU/CallHistory.m; sourceTree = "<group>"; };
 		B50CC3F21D6CEF2700A076D0 /* HistoryCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryCellTableViewCell.h; path = NCCU/HistoryCellTableViewCell.h; sourceTree = "<group>"; };
@@ -547,8 +547,9 @@
 		B5FF00851D6C9E490087FE5D /* AskExpertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AskExpertVC.m; path = NCCU/AskExpertVC.m; sourceTree = "<group>"; };
 		B5FF00871D6CE6B70087FE5D /* RatePopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatePopUp.h; path = NCCU/RatePopUp.h; sourceTree = "<group>"; };
 		B5FF00881D6CE6B70087FE5D /* RatePopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatePopUp.m; path = NCCU/RatePopUp.m; sourceTree = "<group>"; };
+		CB06D6AF170C17C256E239E0 /* Pods-Mumble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mumble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mumble/Pods-Mumble.debug.xcconfig"; sourceTree = "<group>"; };
 		DDD73390EEE7C5A07F5C860D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC3F5CA8AD56FE4B164F1789 /* Pods.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.appstore.xcconfig; path = "Pods/Target Support Files/Pods/Pods.appstore.xcconfig"; sourceTree = "<group>"; };
+		E05F92B0B3A86533BCA4B548 /* Pods_Mumble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mumble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -566,7 +567,7 @@
 				2861C2B2116BE9B7002B8514 /* CFNetwork.framework in Frameworks */,
 				2861C2B6116BE9BA002B8514 /* Security.framework in Frameworks */,
 				28763A4511D2AA91009DB8B6 /* QuartzCore.framework in Frameworks */,
-				1D9C604FFFCD4D8EDB6DDE0B /* Pods.framework in Frameworks */,
+				D0EB293E9A6ACCE020DFFB50 /* Pods_Mumble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,7 +971,7 @@
 			name = MKNumberBadgeView;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				B5EA66D81D4761D200A5FA24 /* NCCU-Glotter.storyboard */,
@@ -983,7 +984,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				285E2A5F150D7287008AE185 /* Build Configuration */,
-				866BB950AB25536101DD36B3 /* Pods */,
+				C171217A2B64139F09E3250B /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -1013,19 +1014,9 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				285D6B7D16BF02E900F239EB /* SenTestingKit.framework */,
 				DDD73390EEE7C5A07F5C860D /* Pods.framework */,
+				E05F92B0B3A86533BCA4B548 /* Pods_Mumble.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		866BB950AB25536101DD36B3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6AF8D4EFBB0152CE3AA38A84 /* Pods.debug.xcconfig */,
-				64EA90219C6E30CF41AFB921 /* Pods.release.xcconfig */,
-				FC3F5CA8AD56FE4B164F1789 /* Pods.appstore.xcconfig */,
-				17E32637713BE0D8A5901D33 /* Pods.betadist.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		B50CC3ED1D6CEED600A076D0 /* CallHistory */ = {
@@ -1145,6 +1136,17 @@
 			name = AskExpert;
 			sourceTree = "<group>";
 		};
+		C171217A2B64139F09E3250B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB06D6AF170C17C256E239E0 /* Pods-Mumble.debug.xcconfig */,
+				39BE8EE69A30B957F2CB6A65 /* Pods-Mumble.release.xcconfig */,
+				9E78A0C3D0FB1CBFD4F579C1 /* Pods-Mumble.appstore.xcconfig */,
+				72B904EB4B49000EBA666047 /* Pods-Mumble.betadist.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1152,13 +1154,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Mumble" */;
 			buildPhases = (
-				784191242CC3903E604E7991 /* Check Pods Manifest.lock */,
+				B97DF56E4E917DCEE05ACAA8 /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				2830A26311CEA89100970A41 /* Info.plist Extras */,
-				3531C66BAB54B87FEAEBF3BF /* Embed Pods Frameworks */,
-				297AB2DE79325345E6548F8C /* Copy Pods Resources */,
+				349B521672389CA631FCE4CC /* [CP] Embed Pods Frameworks */,
+				510812ABB6EDAF78DC87A4F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1214,7 +1216,8 @@
 				en,
 				da,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -1397,49 +1400,49 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-		297AB2DE79325345E6548F8C /* Copy Pods Resources */ = {
+		349B521672389CA631FCE4CC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mumble/Pods-Mumble-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3531C66BAB54B87FEAEBF3BF /* Embed Pods Frameworks */ = {
+		510812ABB6EDAF78DC87A4F5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mumble/Pods-Mumble-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		784191242CC3903E604E7991 /* Check Pods Manifest.lock */ = {
+		B97DF56E4E917DCEE05ACAA8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1587,7 +1590,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6AF8D4EFBB0152CE3AA38A84 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = CB06D6AF170C17C256E239E0 /* Pods-Mumble.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1604,7 +1607,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64EA90219C6E30CF41AFB921 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 39BE8EE69A30B957F2CB6A65 /* Pods-Mumble.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1759,7 +1762,7 @@
 		};
 		2887C88A1454C4C2009B3576 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC3F5CA8AD56FE4B164F1789 /* Pods.appstore.xcconfig */;
+			baseConfigurationReference = 9E78A0C3D0FB1CBFD4F579C1 /* Pods-Mumble.appstore.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1783,7 +1786,7 @@
 		};
 		28BC1E7B1227155500C03FCF /* BetaDist */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17E32637713BE0D8A5901D33 /* Pods.betadist.xcconfig */;
+			baseConfigurationReference = 72B904EB4B49000EBA666047 /* Pods-Mumble.betadist.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;

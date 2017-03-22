@@ -1,4 +1,6 @@
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#endif
 
 #import "RMQAllocatedChannel.h"
 #import "RMQBasicProperties+MergeDefaults.h"
