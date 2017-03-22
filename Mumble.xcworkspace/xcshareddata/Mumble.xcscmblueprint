@@ -1,0 +1,72 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2DD8538673FB2A7EFD577B39646D49DB7E1C2AE9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "60C590E0A1E3A270911208E27AD0681DC1AAA138" : 0,
+    "FEE1C572E49EA55C05E04A41217533B1E41F83F3" : 0,
+    "37627A916738CB9184999F34BEDC8F4742020B72" : 0,
+    "7F4FF6C5F6F5A0EA206DC318D6A95CC361CC7EEE" : 0,
+    "2DD8538673FB2A7EFD577B39646D49DB7E1C2AE9" : 0,
+    "0188F2A2CDE1E23FB54BA7DEC720DB0076A94A2D" : 0,
+    "04101981B66E318109934C9516F88D824BB96459" : 0,
+    "11CBFBF335C4A4D8CFA40109E8B6461A2D698D04" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FD14C919-8FA7-4D14-82E1-B22280B8C411",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "60C590E0A1E3A270911208E27AD0681DC1AAA138" : "mumble-iphoneos\/MumbleKit\/3rdparty\/opus\/",
+    "FEE1C572E49EA55C05E04A41217533B1E41F83F3" : "mumble-iphoneos\/MumbleKit\/3rdparty\/speex\/",
+    "37627A916738CB9184999F34BEDC8F4742020B72" : "mumble-iphoneos\/MumbleKit\/3rdparty\/celt-0.7.0\/",
+    "7F4FF6C5F6F5A0EA206DC318D6A95CC361CC7EEE" : "mumble-iphoneos\/MumbleKit\/",
+    "2DD8538673FB2A7EFD577B39646D49DB7E1C2AE9" : "mumble-iphoneos\/",
+    "0188F2A2CDE1E23FB54BA7DEC720DB0076A94A2D" : "mumble-iphoneos\/MumbleKit\/3rdparty\/protobuf\/",
+    "04101981B66E318109934C9516F88D824BB96459" : "mumble-iphoneos\/Dependencies\/fmdb\/",
+    "11CBFBF335C4A4D8CFA40109E8B6461A2D698D04" : "mumble-iphoneos\/MumbleKit\/3rdparty\/openssl\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Mumble",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Mumble.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/booyah\/protobuf-objc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0188F2A2CDE1E23FB54BA7DEC720DB0076A94A2D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/github.com\/ccgus\/fmdb.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "04101981B66E318109934C9516F88D824BB96459"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/mkrautz\/openssl-mirror.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11CBFBF335C4A4D8CFA40109E8B6461A2D698D04"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nccu_joint\/glotterios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2DD8538673FB2A7EFD577B39646D49DB7E1C2AE9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/mumble-voip\/celt-0.7.0.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37627A916738CB9184999F34BEDC8F4742020B72"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/xiph\/opus.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "60C590E0A1E3A270911208E27AD0681DC1AAA138"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/github.com\/mumble-voip\/mumblekit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7F4FF6C5F6F5A0EA206DC318D6A95CC361CC7EEE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/xiph\/speex.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FEE1C572E49EA55C05E04A41217533B1E41F83F3"
+    }
+  ]
+}
