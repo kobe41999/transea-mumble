@@ -1,5 +1,5 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2DD8538673FB2A7EFD577B39646D49DB7E1C2AE9",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "15A1523272DDDDDAB403AAAA9D666B1A006CD7E2",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -7,6 +7,7 @@
     "60C590E0A1E3A270911208E27AD0681DC1AAA138" : 0,
     "FEE1C572E49EA55C05E04A41217533B1E41F83F3" : 0,
     "37627A916738CB9184999F34BEDC8F4742020B72" : 0,
+    "15A1523272DDDDDAB403AAAA9D666B1A006CD7E2" : 9223372036854775807,
     "7F4FF6C5F6F5A0EA206DC318D6A95CC361CC7EEE" : 0,
     "2DD8538673FB2A7EFD577B39646D49DB7E1C2AE9" : 0,
     "0188F2A2CDE1E23FB54BA7DEC720DB0076A94A2D" : 0,
@@ -18,6 +19,7 @@
     "60C590E0A1E3A270911208E27AD0681DC1AAA138" : "mumble-iphoneos\/MumbleKit\/3rdparty\/opus\/",
     "FEE1C572E49EA55C05E04A41217533B1E41F83F3" : "mumble-iphoneos\/MumbleKit\/3rdparty\/speex\/",
     "37627A916738CB9184999F34BEDC8F4742020B72" : "mumble-iphoneos\/MumbleKit\/3rdparty\/celt-0.7.0\/",
+    "15A1523272DDDDDAB403AAAA9D666B1A006CD7E2" : "transea-mumble\/",
     "7F4FF6C5F6F5A0EA206DC318D6A95CC361CC7EEE" : "mumble-iphoneos\/MumbleKit\/",
     "2DD8538673FB2A7EFD577B39646D49DB7E1C2AE9" : "mumble-iphoneos\/",
     "0188F2A2CDE1E23FB54BA7DEC720DB0076A94A2D" : "mumble-iphoneos\/MumbleKit\/3rdparty\/protobuf\/",
@@ -42,6 +44,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/mkrautz\/openssl-mirror.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11CBFBF335C4A4D8CFA40109E8B6461A2D698D04"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kobe41999\/transea-mumble.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "15A1523272DDDDDAB403AAAA9D666B1A006CD7E2"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nccu_joint\/glotterios.git",

@@ -20,10 +20,10 @@ Test-driven from Swift and implemented in Objective-C, to avoid burdening Object
 - [ ] [OSX support](https://github.com/rabbitmq/rabbitmq-objc-client/issues/55)
 - [x] PKCS12 client certificates using the [TLS auth mechanism plugin](https://github.com/rabbitmq/rabbitmq-auth-mechanism-ssl)
 - [ ] [PKCS12 client certificates using chained CAs](https://github.com/rabbitmq/rabbitmq-objc-client/issues/74)
-- [ ] [Publisher confirmations](https://github.com/rabbitmq/rabbitmq-objc-client/issues/68)
+- [x] [Publisher confirmations](https://github.com/rabbitmq/rabbitmq-objc-client/issues/68)
 - [x] [Publish and consume messages as data](https://github.com/rabbitmq/rabbitmq-objc-client/issues/46)
 - [ ] [Connection closure when broker doesn't send heartbeats fast enough](https://github.com/rabbitmq/rabbitmq-objc-client/issues/41)
-- [ ] [Customisable consumer hooks](https://github.com/rabbitmq/rabbitmq-objc-client/issues/71)
+- [x] [Customisable consumer hooks](https://github.com/rabbitmq/rabbitmq-objc-client/issues/71)
 - [ ] [basic.return support](https://github.com/rabbitmq/rabbitmq-objc-client/issues/72)
 - [ ] [Transaction support](https://github.com/rabbitmq/rabbitmq-objc-client/issues/73)
 
@@ -32,7 +32,7 @@ Test-driven from Swift and implemented in Objective-C, to avoid burdening Object
 1. Create a Cartfile with the following line:
 
    ```
-   github "rabbitmq/rabbitmq-objc-client" ~> 0.9
+   github "rabbitmq/rabbitmq-objc-client" ~> 0.10.0
    ```
 
    Run carthage, for example in a new project:
@@ -53,7 +53,7 @@ this list.
 1. Add the following to your Podfile:
 
    ```
-   pod 'RMQClient', '~> 0.9'
+   pod 'RMQClient', '~> 0.10.0'
    ```
    We recommend adding `use_frameworks!` to enable modular imports (Objective-C only).
 1. Run `pod install`.

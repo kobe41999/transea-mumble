@@ -57,20 +57,27 @@
 @property (nonatomic, readwrite) NSUInteger nextPublishSequenceNumber;
 @property (nonatomic, readwrite) NSMutableArray *transactions;
 @property (nonatomic, readwrite) NSUInteger transactionIndex;
+@property (nonatomic, readwrite) id<RMQLocalSerialQueue> delayQueue;
 @end
 
 @implementation RMQTransactionalConfirmations
 
-- (instancetype)init {
+- (instancetype)initWithDelayQueue:(id<RMQLocalSerialQueue>)queue {
     self = [super init];
     if (self) {
         self.offset = 0;
         self.nextPublishSequenceNumber = 0;
         self.transactions = [NSMutableArray new];
+        self.delayQueue = queue;
         [self addTransaction];
         self.transactionIndex = 0;
     }
     return self;
+}
+
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 - (void)enable {
@@ -83,17 +90,21 @@
 
 - (void)recover {
     self.offset = self.nextPublishSequenceNumber - 1;
-    [self.currentTransaction clearUnconfirmed];
 }
 
-- (void)addPublication {
+- (NSNumber *)addPublication {
+    NSNumber *publicationSequenceNumber = @(self.nextPublishSequenceNumber);
     if (self.isEnabled) {
-        [self.currentTransaction addUnconfirmed:@(self.nextPublishSequenceNumber++)];
+        [self.currentTransaction addUnconfirmed:publicationSequenceNumber];
+        self.nextPublishSequenceNumber++;
     }
+    return publicationSequenceNumber;
 }
 
-- (void)addCallback:(RMQConfirmationCallback)callback {
-    self.currentTransaction.callback = callback;
+- (void)addCallbackWithTimeout:(NSNumber *)timeoutInSecs
+                      callback:(RMQConfirmationCallback)callback {
+    [self.currentTransaction setCallback:callback
+                                 timeout:timeoutInSecs];
     [self.currentTransaction completeIfReady];
     [self addTransaction];
 }
@@ -125,7 +136,7 @@
 }
 
 - (void)addTransaction {
-    [self.transactions addObject:[RMQConfirmationTransaction new]];
+    [self.transactions addObject:[[RMQConfirmationTransaction alloc] initWithDelayQueue:self.delayQueue]];
     self.transactionIndex++;
 }
 

@@ -90,13 +90,27 @@
     [self err];
 }
 
-- (void)afterConfirmed:(void (^)(NSSet<NSNumber *> * _Nonnull, NSSet<NSNumber *> * _Nonnull))handler {
+- (void)afterConfirmed:(NSNumber *)timeout
+               handler:(void (^)(NSSet<NSNumber *> * _Nonnull, NSSet<NSNumber *> * _Nonnull))handler {
     [self err];
+}
+
+- (void)afterConfirmed:(void (^)(NSSet<NSNumber *> * _Nonnull, NSSet<NSNumber *> * _Nonnull))handler {
+    [self afterConfirmed:@0 handler:handler];
 }
 
 - (RMQConsumer *)basicConsume:(NSString *)queueName
                       options:(RMQBasicConsumeOptions)options
                       handler:(RMQConsumerDeliveryHandler)handler {
+    [self basicConsume:[[RMQConsumer alloc] initWithChannel:self queueName:queueName options:options]];
+    return nil;
+}
+
+- (void)basicConsume:(RMQConsumer *)consumer {
+    [self err];
+}
+
+- (NSString *)generateConsumerTag {
     [self err];
     return nil;
 }
@@ -104,12 +118,13 @@
 - (void)basicCancel:(NSString *)consumerTag {
 }
 
-- (void)basicPublish:(NSString *)message
-          routingKey:(NSString *)routingKey
-            exchange:(NSString *)exchange
-          properties:(NSArray *)properties
-             options:(RMQBasicPublishOptions)options {
+- (NSNumber *)basicPublish:(NSString *)message
+                routingKey:(NSString *)routingKey
+                  exchange:(NSString *)exchange
+                properties:(NSArray *)properties
+                   options:(RMQBasicPublishOptions)options {
     [self err];
+    return @-1;
 }
 
 -  (void)basicGet:(NSString *)queue

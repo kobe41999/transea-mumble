@@ -65,11 +65,12 @@
 
 extern NSInteger const RMQChannelLimit;
 
+/// @brief Public API: Interface to an AMQ connection. See the see the <a href="http://www.amqp.org/">spec</a> for details.
 @interface RMQConnection : NSObject<RMQFrameHandler, RMQSender, RMQStarter, RMQTransportDelegate>
 
 @property (nonnull, copy, nonatomic, readonly) NSString *vhost;
 
-# pragma mark - Designated initializer (implementation only)
+/// @brief Designated initializer: do not use.
 - (nonnull instancetype)initWithTransport:(nonnull id<RMQTransport>)transport
                                    config:(nonnull RMQConnectionConfig *)config
                          handshakeTimeout:(nonnull NSNumber *)handshakeTimeout
@@ -80,7 +81,7 @@ extern NSInteger const RMQChannelLimit;
                             waiterFactory:(nonnull id<RMQWaiterFactory>)waiterFactory
                           heartbeatSender:(nonnull id<RMQHeartbeatSender>)heartbeatSender;
 
-# pragma mark - User-facing initializers
+/// @brief Connection tuning, customisable TLS, all recovery options.
 - (nonnull instancetype)initWithUri:(nonnull NSString *)uri
                          tlsOptions:(nonnull RMQTLSOptions *)tlsOptions
                          channelMax:(nonnull NSNumber *)channelMax
@@ -93,10 +94,12 @@ extern NSInteger const RMQChannelLimit;
                    recoveryAttempts:(nonnull NSNumber *)recoveryAttempts
          recoverFromConnectionClose:(BOOL)shouldRecoverFromConnectionClose;
 
+/// @brief Allows setting of recovery interval
 - (nonnull instancetype)initWithUri:(nonnull NSString *)uri
                            delegate:(nullable id<RMQConnectionDelegate>)delegate
                        recoverAfter:(nonnull NSNumber *)recoveryInterval;
 
+/// @brief Connection tuning options with customisable TLS
 - (nonnull instancetype)initWithUri:(nonnull NSString *)uri
                          tlsOptions:(nonnull RMQTLSOptions *)tlsOptions
                          channelMax:(nonnull NSNumber *)channelMax
@@ -106,6 +109,7 @@ extern NSInteger const RMQChannelLimit;
                            delegate:(nullable id<RMQConnectionDelegate>)delegate
                       delegateQueue:(nonnull dispatch_queue_t)delegateQueue;
 
+/// @brief Connection tuning options.
 - (nonnull instancetype)initWithUri:(nonnull NSString *)uri
                          channelMax:(nonnull NSNumber *)channelMax
                            frameMax:(nonnull NSNumber *)frameMax
@@ -114,22 +118,60 @@ extern NSInteger const RMQChannelLimit;
                            delegate:(nullable id<RMQConnectionDelegate>)delegate
                       delegateQueue:(nonnull dispatch_queue_t)delegateQueue;
 
+/*!
+ * @brief Configurable TLS options. Use this if you wants TLS on a port other than 443.
+ * @param uri        The URI contains all connection information, including credentials.<br/>
+                     For example, "amqps://user:pass@hostname:1234/myvhost".<br/>
+                     Note: to use the default "/" vhost, omit the trailing slash (or else you must encode it as %2F).
+ * @param tlsOptions The RMQTLSOptions to use
+ * @param delegate   Any object that conforms to the RMQConnectionDelegate protocol.
+                     Use this to handle connection- and  channel-level errors.
+                     RMQConnectionDelegateLogger is useful for development purposes.
+ */
 - (nonnull instancetype)initWithUri:(nonnull NSString *)uri
                          tlsOptions:(nonnull RMQTLSOptions *)tlsOptions
                            delegate:(nullable id<RMQConnectionDelegate>)delegate;
 
+/*!
+ * @brief Parses URI to obtain credentials and TLS, customisable peer verification.
+ * @param uri        The URI contains all connection information, including credentials.<br/>
+                     For example, "amqps://user:pass@hostname:1234/myvhost".<br/>
+                     Note: to use the default "/" vhost, omit the trailing slash (or else you must encode it as %2F).
+ * @param verifyPeer Set to NO / false when developing against servers without valid certificates.
+                     Never set this to NO / false in production.
+ * @param delegate   Any object that conforms to the RMQConnectionDelegate protocol.
+                     Use this to handle connection- and  channel-level errors.
+                     RMQConnectionDelegateLogger is useful for development purposes.
+ */
 - (nonnull instancetype)initWithUri:(nonnull NSString *)uri
                          verifyPeer:(BOOL)verifyPeer
                            delegate:(nullable id<RMQConnectionDelegate>)delegate;
 
+/*!
+ * @brief Parses URI to obtain credentials and TLS enablement (which implies verifyPeer).
+ * @param uri        The URI contains all connection information, including credentials.<br/>
+                     For example, "amqps://user:pass@hostname:1234/myvhost".<br/>
+                     Note: to use the default "/" vhost, omit the trailing slash (or else you must encode it as %2F).
+ * @param delegate   Any object that conforms to the RMQConnectionDelegate protocol.
+                     Use this to handle connection- and  channel-level errors.
+                     RMQConnectionDelegateLogger is useful for development purposes.
+ */
 - (nonnull instancetype)initWithUri:(nonnull NSString *)uri
                            delegate:(nullable id<RMQConnectionDelegate>)delegate;
 
+/// @brief Assumes amqp://guest:guest@localhost URI.
 - (nonnull instancetype)initWithDelegate:(nullable id<RMQConnectionDelegate>)delegate;
 
-# pragma mark - Other methods
+/// @brief Close the AMQP connection with a handshake.
 - (void)close;
+
+/// @brief Close the AMQP connection with a handshake, blocking the calling thread until done.
 - (void)blockingClose;
+
+/*!
+ * @brief Create a new channel, using an internally allocated channel number.
+ * @return An RMQAllocatedChannel or RMQUnallocatedChannel. The latter sends errors to the RMQConnectionDelegate.
+ */
 - (nonnull id<RMQChannel>)createChannel;
 
 @end

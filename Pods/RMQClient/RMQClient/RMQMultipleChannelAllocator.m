@@ -155,21 +155,20 @@
     RMQGCDSerialQueue *recoveryQueue = [self serialQueue:channelNumber type:@"recovery"];
     [recoveryQueue suspend];
     RMQGCDSerialQueue *enablementQueue = [self serialQueue:channelNumber type:@"enablement"];
+    RMQGCDSerialQueue *confirmationTimeoutQueue = [self serialQueue:channelNumber type:@"confirmation-timeout"];
 
     RMQSuspendResumeDispatcher *dispatcher = [[RMQSuspendResumeDispatcher alloc] initWithSender:self.sender
                                                                                    commandQueue:commandQueue
                                                                                 enablementQueue:enablementQueue
                                                                                     enableDelay:self.dispatcherReenableDelay];
-    RMQSuspendResumeDispatcher *recoveryDispatcher = [[RMQSuspendResumeDispatcher alloc] initWithSender:self.sender
-                                                                                           commandQueue:recoveryQueue];
+    RMQTransactionalConfirmations *confirmations = [[RMQTransactionalConfirmations alloc] initWithDelayQueue:confirmationTimeoutQueue];
 
     RMQAllocatedChannel *ch = [[RMQAllocatedChannel alloc] init:@(channelNumber)
                                                 contentBodySize:@(self.sender.frameMax.integerValue - RMQEmptyFrameSize)
                                                      dispatcher:dispatcher
-                                             recoveryDispatcher:recoveryDispatcher
                                                   nameGenerator:self.nameGenerator
                                                       allocator:self
-                                                  confirmations:[RMQTransactionalConfirmations new]];
+                                                  confirmations:confirmations];
     self.channels[@(channelNumber)] = ch;
     return ch;
 }

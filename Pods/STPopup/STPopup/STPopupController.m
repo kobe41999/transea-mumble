@@ -11,6 +11,21 @@
 #import "STPopupNavigationBar.h"
 #import "UIViewController+STPopup.h"
 #import "UIResponder+STPopup.h"
+#import "STPopupControllerTransitioningSlideVertical.h"
+#import "STPopupControllerTransitioningFade.h"
+
+@implementation STPopupControllerTransitioningContext
+
+- (instancetype)initWithContainerView:(UIView *)containerView action:(STPopupControllerTransitioningAction)action
+{
+    if (self = [super init]) {
+        _containerView = containerView;
+        _action = action;
+    }
+    return self;
+}
+
+@end
 
 CGFloat const STPopupBottomSheetExtraHeight = 80;
 
@@ -98,6 +113,10 @@ static NSMutableSet *_retainedPopupControllers;
     STPopupLeftBarItem *_defaultLeftBarItem;
     NSDictionary *_keyboardInfo;
     BOOL _observing;
+    
+    // Built-in transitioning
+    STPopupControllerTransitioningSlideVertical *_transitioningSlideVertical;
+    STPopupControllerTransitioningFade *_transitioningFade;
 }
 
 + (void)load
@@ -543,6 +562,9 @@ static NSMutableSet *_retainedPopupControllers;
     [self setupBackgroundView];
     [self setupContainerView];
     [self setupNavigationBar];
+    
+    _transitioningSlideVertical = [STPopupControllerTransitioningSlideVertical new];
+    _transitioningFade = [STPopupControllerTransitioningFade new];
 }
 
 - (void)setupBackgroundView
@@ -673,19 +695,22 @@ static NSMutableSet *_retainedPopupControllers;
         offsetY = keyboardHeight;
     }
     else {
-        CGFloat spacing = 5;
-        offsetY = _containerView.frame.origin.y + _containerView.bounds.size.height - (_containerViewController.view.bounds.size.height - keyboardHeight - spacing);
-        if (offsetY <= 0) { // _containerView can be totally shown, so no need to reposition
-            return;
-        }
-        
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-        
-        if (_containerView.frame.origin.y - offsetY < statusBarHeight) { // _containerView will be covered by status bar if it is repositioned with "offsetY"
-            offsetY = _containerView.frame.origin.y - statusBarHeight;
-            // currentTextField can not be totally shown if _containerView is going to repositioned with "offsetY"
-            if (textFieldBottomY - offsetY > _containerViewController.view.bounds.size.height - keyboardHeight - spacing) {
-                offsetY = textFieldBottomY - (_containerViewController.view.bounds.size.height - keyboardHeight - spacing);
+        if (_containerView.bounds.size.height <= _containerViewController.view.bounds.size.height - keyboardHeight - statusBarHeight) {
+            offsetY = _containerView.frame.origin.y - (statusBarHeight + (_containerViewController.view.bounds.size.height - keyboardHeight - statusBarHeight - _containerView.bounds.size.height) / 2);
+        }
+        else {
+            CGFloat spacing = 5;
+            offsetY = _containerView.frame.origin.y + _containerView.bounds.size.height - (_containerViewController.view.bounds.size.height - keyboardHeight - spacing);
+            if (offsetY <= 0) { // _containerView can be totally shown, so no need to translate the origin
+                return;
+            }
+            if (_containerView.frame.origin.y - offsetY < statusBarHeight) { // _containerView will be covered by status bar if the origin is translated by "offsetY"
+                offsetY = _containerView.frame.origin.y - statusBarHeight;
+                // currentTextField can not be totally shown if _containerView is going to repositioned with "offsetY"
+                if (textFieldBottomY - offsetY > _containerViewController.view.bounds.size.height - keyboardHeight - spacing) {
+                    offsetY = textFieldBottomY - (_containerViewController.view.bounds.size.height - keyboardHeight - spacing);
+                }
             }
         }
     }
@@ -708,6 +733,10 @@ static NSMutableSet *_retainedPopupControllers;
 - (UIView<UIKeyInput> *)getCurrentTextInputInView:(UIView *)view
 {
     if ([view conformsToProtocol:@protocol(UIKeyInput)] && view.isFirstResponder) {
+        // Quick fix for web view issue
+        if ([view isKindOfClass:NSClassFromString(@"UIWebBrowserView")] || [view isKindOfClass:NSClassFromString(@"WKContentView")]) {
+            return nil;
+        }
         return (UIView<UIKeyInput> *)view;
     }
     
@@ -743,14 +772,26 @@ static NSMutableSet *_retainedPopupControllers;
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 
+- (STPopupControllerTransitioningContext *)convertTransitioningContext:(id <UIViewControllerContextTransitioning>)transitionContext
+{
+    STPopupControllerTransitioningAction action = STPopupControllerTransitioningActionPresent;
+    if ([transitionContext viewControllerForKey:UITransitionContextToViewControllerKey] != _containerViewController) {
+        action = STPopupControllerTransitioningActionDismiss;
+    }
+    return [[STPopupControllerTransitioningContext alloc] initWithContainerView:_containerView action:action];
+}
+
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    if (toViewController == _containerViewController) {
-        return self.transitionStyle == STPopupTransitionStyleFade ? 0.25 : 0.5;
-    }
-    else {
-        return self.transitionStyle == STPopupTransitionStyleFade ? 0.2 : 0.35;
+    STPopupControllerTransitioningContext *context = [self convertTransitioningContext:transitionContext];
+    switch (self.transitionStyle) {
+        case STPopupTransitionStyleSlideVertical:
+            return [_transitioningSlideVertical popupControllerTransitionDuration:context];
+        case STPopupTransitionStyleFade:
+            return [_transitioningFade popupControllerTransitionDuration:context];
+        case STPopupTransitionStyleCustom:
+            NSAssert(self.transitioning, @"transitioning should be provided if it's using STPopupTransitionStyleCustom");
+            return [_transitioning popupControllerTransitionDuration:context];
     }
 }
 
@@ -763,7 +804,22 @@ static NSMutableSet *_retainedPopupControllers;
     
     UIViewController *topViewController = self.topViewController;
     
-    if (toViewController == _containerViewController) { // Presenting
+    STPopupControllerTransitioningContext *context = [self convertTransitioningContext:transitionContext];
+    id<STPopupControllerTransitioning> transitioning = nil;
+    switch (self.transitionStyle) {
+        case STPopupTransitionStyleSlideVertical:
+            transitioning = _transitioningSlideVertical;
+            break;
+        case STPopupTransitionStyleFade:
+            transitioning = _transitioningFade;
+            break;
+        case STPopupTransitionStyleCustom:
+            transitioning = self.transitioning;
+            break;
+    }
+    NSAssert(transitioning, @"transitioning should be provided if it's using STPopupTransitionStyleCustom");
+    
+    if (context.action == STPopupControllerTransitioningActionPresent) {
         [fromViewController beginAppearanceTransition:NO animated:YES];
         
         [[transitionContext containerView] addSubview:toViewController.view];
@@ -776,96 +832,49 @@ static NSMutableSet *_retainedPopupControllers;
         [toViewController setNeedsStatusBarAppearanceUpdate];
         [self updateNavigationBarAniamted:NO];
         
-        CGAffineTransform lastTransform = _containerView.transform;
-        _containerView.transform = CGAffineTransformIdentity; // Set transform to identity for getting a correct origin.y
-        
-        CGFloat originY = _containerView.frame.origin.y;
-        
-        _containerView.transform = lastTransform;
-        
-        switch (self.transitionStyle) {
-            case STPopupTransitionStyleFade: {
-                _containerView.alpha = 0;
-                _containerView.transform = CGAffineTransformMakeScale(1.05, 1.05);
-            }
-                break;
-            case STPopupTransitionStyleSlideVertical:
-            default: {
-                _containerView.alpha = 1;
-                _containerView.transform = CGAffineTransformMakeTranslation(0, _containerViewController.view.bounds.size.height - originY);
-            }
-                break;
-        }
-        
         CGFloat lastBackgroundViewAlpha = _backgroundView.alpha;
         _backgroundView.alpha = 0;
         _backgroundView.userInteractionEnabled = NO;
         _containerView.userInteractionEnabled = NO;
+        _containerView.transform = CGAffineTransformIdentity;
         
-        void (^animationBlock)() = ^{
+        [UIView animateWithDuration:[transitioning popupControllerTransitionDuration:context] delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             _backgroundView.alpha = lastBackgroundViewAlpha;
-            _containerView.alpha = 1;
-            _containerView.transform = CGAffineTransformIdentity;
-        };
-        void (^completionBlock)(BOOL) = ^(BOOL finished){
+        } completion:nil];
+        
+        [transitioning popupControllerAnimateTransition:context completion:^{
             _backgroundView.userInteractionEnabled = YES;
             _containerView.userInteractionEnabled = YES;
             
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
             [topViewController didMoveToParentViewController:toViewController];
             [fromViewController endAppearanceTransition];
-        };
-        
-        switch (self.transitionStyle) {
-            case STPopupTransitionStyleFade:
-                [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:animationBlock completion:completionBlock];
-                break;
-            case STPopupTransitionStyleSlideVertical:
-                [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:animationBlock completion:completionBlock];
-                break;
-            default:
-                break;
-        }
+        }];
     }
-    else { // Dismissing
+    else {
         [toViewController beginAppearanceTransition:YES animated:YES];
         
         [topViewController beginAppearanceTransition:NO animated:YES];
         [topViewController willMoveToParentViewController:nil];
         
-        CGAffineTransform lastTransform = _containerView.transform;
-        _containerView.transform = CGAffineTransformIdentity; // Set transform to identity for getting a correct origin.y
-        
-        CGFloat originY = _containerView.frame.origin.y;
-        
-        _containerView.transform = lastTransform;
-        
         CGFloat lastBackgroundViewAlpha = _backgroundView.alpha;
         _backgroundView.userInteractionEnabled = NO;
         _containerView.userInteractionEnabled = NO;
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        [UIView animateWithDuration:[transitioning popupControllerTransitionDuration:context] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             _backgroundView.alpha = 0;
-            switch (self.transitionStyle) {
-                case STPopupTransitionStyleFade: {
-                    _containerView.alpha = 0;
-                }
-                    break;
-                case STPopupTransitionStyleSlideVertical:
-                default: {
-                    _containerView.transform = CGAffineTransformMakeTranslation(0, _containerViewController.view.bounds.size.height - originY + _containerView.frame.size.height);
-                }
-                    break;
-            }
-        } completion:^(BOOL finished) {
+        } completion:nil];
+        
+        [transitioning popupControllerAnimateTransition:context completion:^{
             _backgroundView.userInteractionEnabled = YES;
-            _containerView.userInteractionEnabled = YES;
-            _containerView.transform = CGAffineTransformIdentity;
+            _containerView.userInteractionEnabled = YES;;
+            
             [fromViewController.view removeFromSuperview];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
             
             [topViewController.view removeFromSuperview];
             [topViewController removeFromParentViewController];
-    
+            
             [toViewController endAppearanceTransition];
             
             _backgroundView.alpha = lastBackgroundViewAlpha;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0227E7041EA9E03900E0F503 /* VoiceCallingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227E7031EA9E03900E0F503 /* VoiceCallingVC.swift */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -208,8 +209,6 @@
 		B5EA66DF1D47621000A5FA24 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA66DD1D47621000A5FA24 /* MainVC.m */; };
 		B5EA66E21D476D1400A5FA24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA66E11D476D1400A5FA24 /* AppDelegate.m */; };
 		B5EA66E31D476D1400A5FA24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA66E11D476D1400A5FA24 /* AppDelegate.m */; };
-		B5EA66E61D47BEE700A5FA24 /* VoiceCallingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA66E51D47BEE700A5FA24 /* VoiceCallingVC.m */; };
-		B5EA66E71D47BEE700A5FA24 /* VoiceCallingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA66E51D47BEE700A5FA24 /* VoiceCallingVC.m */; };
 		B5FF00861D6C9E490087FE5D /* AskExpertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FF00851D6C9E490087FE5D /* AskExpertVC.m */; };
 		B5FF00891D6CE6B70087FE5D /* RatePopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FF00881D6CE6B70087FE5D /* RatePopUp.m */; };
 		D0EB293E9A6ACCE020DFFB50 /* Pods_Mumble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05F92B0B3A86533BCA4B548 /* Pods_Mumble.framework */; };
@@ -240,6 +239,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0227E7031EA9E03900E0F503 /* VoiceCallingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceCallingVC.swift; path = NCCU/VoiceCallingVC.swift; sourceTree = "<group>"; };
+		0227E7081EA9E42000E0F503 /* Mumble-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mumble-Bridging-Header.h"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Mumble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mumble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -541,8 +542,6 @@
 		B5EA66DD1D47621000A5FA24 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = NCCU/MainVC.m; sourceTree = "<group>"; };
 		B5EA66E01D476D1400A5FA24 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NCCU/AppDelegate.h; sourceTree = "<group>"; };
 		B5EA66E11D476D1400A5FA24 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NCCU/AppDelegate.m; sourceTree = "<group>"; };
-		B5EA66E41D47BEE700A5FA24 /* VoiceCallingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoiceCallingVC.h; path = NCCU/VoiceCallingVC.h; sourceTree = "<group>"; };
-		B5EA66E51D47BEE700A5FA24 /* VoiceCallingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoiceCallingVC.m; path = NCCU/VoiceCallingVC.m; sourceTree = "<group>"; };
 		B5FF00841D6C9E490087FE5D /* AskExpertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AskExpertVC.h; path = NCCU/AskExpertVC.h; sourceTree = "<group>"; };
 		B5FF00851D6C9E490087FE5D /* AskExpertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AskExpertVC.m; path = NCCU/AskExpertVC.m; sourceTree = "<group>"; };
 		B5FF00871D6CE6B70087FE5D /* RatePopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatePopUp.h; path = NCCU/RatePopUp.h; sourceTree = "<group>"; };
@@ -971,7 +970,7 @@
 			name = MKNumberBadgeView;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				B5EA66D81D4761D200A5FA24 /* NCCU-Glotter.storyboard */,
@@ -1121,8 +1120,8 @@
 				B5EA66DD1D47621000A5FA24 /* MainVC.m */,
 				B5EA66E01D476D1400A5FA24 /* AppDelegate.h */,
 				B5EA66E11D476D1400A5FA24 /* AppDelegate.m */,
-				B5EA66E41D47BEE700A5FA24 /* VoiceCallingVC.h */,
-				B5EA66E51D47BEE700A5FA24 /* VoiceCallingVC.m */,
+				0227E7031EA9E03900E0F503 /* VoiceCallingVC.swift */,
+				0227E7081EA9E42000E0F503 /* Mumble-Bridging-Header.h */,
 			);
 			name = "NCCU-Glotter";
 			sourceTree = "<group>";
@@ -1201,6 +1200,7 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 6PPUK8PF66;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -1216,7 +1216,7 @@
 				en,
 				da,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -1459,6 +1459,7 @@
 				2861C27C116BE905002B8514 /* MUPublicServerListController.m in Sources */,
 				2861C281116BE905002B8514 /* MUWelcomeScreenPhone.m in Sources */,
 				28F9174811B946250030D649 /* FMDatabase.m in Sources */,
+				0227E7041EA9E03900E0F503 /* VoiceCallingVC.swift in Sources */,
 				28F9174911B946250030D649 /* FMDatabaseAdditions.m in Sources */,
 				B58150031D60B06D000A2152 /* TransVC.m in Sources */,
 				28F9174B11B946250030D649 /* FMResultSet.m in Sources */,
@@ -1486,7 +1487,6 @@
 				28F019911364585C00E402F6 /* MUServerCell.m in Sources */,
 				28BF81D2139AFFD50078B722 /* MUCertificateDiskImportViewController.m in Sources */,
 				280D9ADA13EAFAAE003B64A0 /* MUServerRootViewController.m in Sources */,
-				B5EA66E61D47BEE700A5FA24 /* VoiceCallingVC.m in Sources */,
 				283363DB13EF154C00A04F04 /* MUAudioTransmissionPreferencesViewController.m in Sources */,
 				28A2AEC114788BE300F3B83F /* MUColor.m in Sources */,
 				28F79C70147973D60003B8BA /* MUUserStateAcessoryView.m in Sources */,
@@ -1543,7 +1543,6 @@
 			files = (
 				B5EA66E31D476D1400A5FA24 /* AppDelegate.m in Sources */,
 				B5EA66DF1D47621000A5FA24 /* MainVC.m in Sources */,
-				B5EA66E71D47BEE700A5FA24 /* VoiceCallingVC.m in Sources */,
 				285D6BD416BF078E00F239EB /* MUTextMessageProcessor.m in Sources */,
 				285D6B9016BF03D700F239EB /* MUTextMessageProcessorTest.m in Sources */,
 			);
@@ -1599,8 +1598,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6PPUK8PF66;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nccu.mclab1.glotter;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Classes/Mumble-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1616,8 +1619,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6PPUK8PF66;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nccu.mclab1.glotter;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Classes/Mumble-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1771,8 +1777,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6PPUK8PF66;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nccu.mclab1.glotter;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Classes/Mumble-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = AppStore;
@@ -1795,8 +1804,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6PPUK8PF66;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nccu.mclab1.glotter;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Classes/Mumble-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = BetaDist;

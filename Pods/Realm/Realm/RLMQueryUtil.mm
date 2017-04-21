@@ -19,10 +19,10 @@
 #import "RLMQueryUtil.hpp"
 
 #import "RLMArray.h"
-#import "RLMObjectSchema.h"
+#import "RLMObjectSchema_Private.h"
 #import "RLMObject_Private.hpp"
 #import "RLMPredicateUtil.hpp"
-#import "RLMProperty.h"
+#import "RLMProperty_Private.h"
 #import "RLMSchema.h"
 #import "RLMUtil.hpp"
 
@@ -151,7 +151,7 @@ NSString *operatorName(NSPredicateOperatorType operatorType)
 
 Table& get_table(Group& group, RLMObjectSchema *objectSchema)
 {
-    return *ObjectStore::table_for_object_type(&group, objectSchema.className.UTF8String);
+    return *ObjectStore::table_for_object_type(group, objectSchema.objectName.UTF8String);
 }
 
 // A reference to a column within a query. Can be resolved to a Columns<T> for use in query expressions.
@@ -180,6 +180,7 @@ public:
     RLMProperty *property() const { return m_property; }
     size_t index() const { return m_index; }
     RLMPropertyType type() const { return property().type; }
+    Group& group() const { return *m_group; }
 
     RLMObjectSchema *link_target_object_schema() const
     {
@@ -545,6 +546,9 @@ void QueryBuilder::add_string_constraint(NSPredicateOperatorType operatorType,
         case NSNotEqualToPredicateOperatorType:
             m_query.and_query(column.not_equal(value, caseSensitive));
             break;
+        case NSLikePredicateOperatorType:
+            m_query.and_query(column.like(value, caseSensitive));
+            break;
         default:
             @throw RLMPredicateException(@"Invalid operator type",
                                          @"Operator '%@' not supported for string type", operatorName(operatorType));
@@ -664,11 +668,6 @@ void QueryBuilder::add_link_constraint(NSPredicateOperatorType operatorType,
                                        const ColumnReference& column, RLMObject *obj) {
     RLMPrecondition(operatorType == NSEqualToPredicateOperatorType || operatorType == NSNotEqualToPredicateOperatorType,
                     @"Invalid operator type", @"Only 'Equal' and 'Not Equal' operators supported for object comparison");
-
-    // NOTE: This precondition assumes that the argument `obj` will be always originating from the
-    // queried table as verified before by `validate_property_value`
-    RLMPrecondition(column.link_target_object_schema() == obj.objectSchema || !obj->_row.is_attached(),
-                    @"Invalid value origin", @"Object must be from the Realm being queried");
 
     if (operatorType == NSEqualToPredicateOperatorType) {
         m_query.and_query(column.resolve<Link>() == obj->_row);
@@ -855,7 +854,13 @@ void QueryBuilder::add_constraint(RLMPropertyType type, NSPredicateOperatorType 
     }
 }
 
-ColumnReference QueryBuilder::column_reference_from_key_path(RLMObjectSchema *objectSchema, NSString *keyPath, bool isAggregate)
+struct KeyPath {
+    std::vector<RLMProperty *> links;
+    RLMProperty *property;
+    bool containsToManyRelationship;
+};
+
+KeyPath key_path_from_string(RLMSchema *schema, RLMObjectSchema *objectSchema, NSString *keyPath)
 {
     RLMProperty *property;
     std::vector<RLMProperty *> links;
@@ -879,21 +884,28 @@ ColumnReference QueryBuilder::column_reference_from_key_path(RLMObjectSchema *ob
 
             links.push_back(property);
             REALM_ASSERT(property.objectClassName);
-            objectSchema = m_schema[property.objectClassName];
+            objectSchema = schema[property.objectClassName];
         }
 
         start = end + 1;
     } while (end != NSNotFound);
 
-    if (isAggregate && !keyPathContainsToManyRelationship) {
+    return {std::move(links), property, keyPathContainsToManyRelationship};
+}
+
+ColumnReference QueryBuilder::column_reference_from_key_path(RLMObjectSchema *objectSchema, NSString *keyPathString, bool isAggregate)
+{
+    auto keyPath = key_path_from_string(m_schema, objectSchema, keyPathString);
+
+    if (isAggregate && !keyPath.containsToManyRelationship) {
         @throw RLMPredicateException(@"Invalid predicate",
                                      @"Aggregate operations can only be used on key paths that include an array property");
-    } else if (!isAggregate && keyPathContainsToManyRelationship) {
+    } else if (!isAggregate && keyPath.containsToManyRelationship) {
         @throw RLMPredicateException(@"Invalid predicate",
                                      @"Key paths that include an array property must use aggregate operations");
     }
 
-    return ColumnReference(m_query, m_group, m_schema, property, std::move(links));
+    return ColumnReference(m_query, m_group, m_schema, keyPath.property, std::move(keyPath.links));
 }
 
 void validate_property_value(const ColumnReference& column,
@@ -909,6 +921,10 @@ void validate_property_value(const ColumnReference& column,
     else {
         RLMPrecondition(RLMIsObjectValidForProperty(value, prop),
                         @"Invalid value", err, RLMTypeToString(prop.type), keyPath, objectSchema.className, value);
+    }
+    if (RLMObjectBase *obj = RLMDynamicCast<RLMObjectBase>(value)) {
+        RLMPrecondition(!obj->_row.is_attached() || &column.group() == &obj->_realm.group,
+                        @"Invalid value origin", @"Object must be from the Realm being queried");
     }
 }
 
@@ -1314,15 +1330,18 @@ void QueryBuilder::apply_predicate(NSPredicate *predicate, RLMObjectSchema *obje
     }
 }
 
-size_t RLMValidatedColumnForSort(Table& table, NSString *propName) {
-    RLMPrecondition([propName rangeOfString:@"."].location == NSNotFound,
-                    @"Invalid sort property", @"Cannot sort on '%@': sorting on key paths is not supported.", propName);
-    size_t column = table.get_column_index(propName.UTF8String);
-    RLMPrecondition(column != npos, @"Invalid sort property",
-                    @"Cannot sort on property '%@' on object of type '%s': property not found.",
-                    propName, ObjectStore::object_type_for_table_name(table.get_name()).data());
+std::vector<size_t> RLMValidatedColumnIndicesForSort(RLMClassInfo& classInfo, NSString *keyPathString)
+{
+    RLMPrecondition([keyPathString rangeOfString:@"@"].location == NSNotFound, @"Invalid key path for sort",
+                    @"Cannot sort on '%@': sorting on key paths that include collection operators is not supported.",
+                    keyPathString);
+    auto keyPath = key_path_from_string(classInfo.realm.schema, classInfo.rlmObjectSchema, keyPathString);
 
-    switch (auto type = static_cast<RLMPropertyType>(table.get_column_type(column))) {
+    RLMPrecondition(!keyPath.containsToManyRelationship, @"Invalid key path for sort",
+                    @"Cannot sort on '%@': sorting on key paths that include a to-many relationship is not supported.",
+                    keyPathString);
+
+    switch (keyPath.property.type) {
         case RLMPropertyTypeBool:
         case RLMPropertyTypeDate:
         case RLMPropertyTypeDouble:
@@ -1333,11 +1352,22 @@ size_t RLMValidatedColumnForSort(Table& table, NSString *propName) {
 
         default:
             @throw RLMPredicateException(@"Invalid sort property type",
-                                         @"Cannot sort on property '%@' on object of type '%s': sorting is only supported on bool, date, double, float, integer, and string properties, but property is of type %@.",
-                                         propName, ObjectStore::object_type_for_table_name(table.get_name()).data(),
-                                         RLMTypeToString(type));
+                                         @"Cannot sort on key path '%@' on object of type '%s': sorting is only supported on bool, date, double, float, integer, and string properties, but property is of type %@.",
+                                         keyPathString, classInfo.rlmObjectSchema.className, RLMTypeToString(keyPath.property.type));
     }
-    return column;
+
+    std::vector<size_t> columnIndices;
+    columnIndices.reserve(keyPath.links.size() + 1);
+
+    auto currentClassInfo = &classInfo;
+    for (RLMProperty *link : keyPath.links) {
+        auto tableColumn = currentClassInfo->tableColumn(link);
+        currentClassInfo = &currentClassInfo->linkTargetType(link.index);
+        columnIndices.push_back(tableColumn);
+    }
+    columnIndices.push_back(currentClassInfo->tableColumn(keyPath.property));
+
+    return columnIndices;
 }
 
 } // namespace
@@ -1363,15 +1393,16 @@ realm::Query RLMPredicateToQuery(NSPredicate *predicate, RLMObjectSchema *object
     return query;
 }
 
-realm::SortOrder RLMSortOrderFromDescriptors(realm::Table& table, NSArray<RLMSortDescriptor *> *descriptors) {
-    realm::SortOrder sort;
-    sort.column_indices.reserve(descriptors.count);
-    sort.ascending.reserve(descriptors.count);
+realm::SortDescriptor RLMSortDescriptorFromDescriptors(RLMClassInfo& classInfo, NSArray<RLMSortDescriptor *> *descriptors) {
+    std::vector<std::vector<size_t>> columnIndices;
+    std::vector<bool> ascending;
+    columnIndices.reserve(descriptors.count);
+    ascending.reserve(descriptors.count);
 
     for (RLMSortDescriptor *descriptor in descriptors) {
-        sort.column_indices.push_back(RLMValidatedColumnForSort(table, descriptor.property));
-        sort.ascending.push_back(descriptor.ascending);
+        columnIndices.push_back(RLMValidatedColumnIndicesForSort(classInfo, descriptor.keyPath));
+        ascending.push_back(descriptor.ascending);
     }
 
-    return sort;
+    return {*classInfo.table(), std::move(columnIndices), std::move(ascending)};
 }

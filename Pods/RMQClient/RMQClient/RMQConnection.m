@@ -283,9 +283,9 @@ NSInteger const RMQChannelLimit = 65535;
                                                                        config:self.config
                                                             completionHandler:^(NSNumber *heartbeatTimeout) {
                                                                 [self.heartbeatSender startWithInterval:@(heartbeatTimeout.integerValue / 2)];
+                                                                self.handshakeComplete = YES;
                                                                 [handshakeCompletion done];
                                                                 [self.reader run];
-                                                                self.handshakeComplete = YES;
                                                                 completionHandler();
                                                             }];
             RMQReader *handshakeReader = [[RMQReader alloc] initWithTransport:self.transport
@@ -339,12 +339,6 @@ NSInteger const RMQChannelLimit = 65535;
     if (self.handshakeComplete || isForced) {
         [self.transport write:frameset.amqEncoded];
         [self.heartbeatSender signalActivity];
-    } else {
-        [self.commandQueue delayedBy:self.config.recovery.interval
-                             enqueue:^{
-                                 [self.transport write:frameset.amqEncoded];
-                                 [self.heartbeatSender signalActivity];
-                             }];
     }
 }
 
@@ -369,10 +363,6 @@ NSInteger const RMQChannelLimit = 65535;
 }
 
 # pragma mark - RMQTransportDelegate
-
-- (void)transport:(id<RMQTransport>)transport failedToWriteWithError:(NSError *)error {
-    [self.delegate connection:self failedToWriteWithError:error];
-}
 
 - (void)transport:(id<RMQTransport>)transport disconnectedWithError:(NSError *)error {
     self.handshakeComplete = NO;
