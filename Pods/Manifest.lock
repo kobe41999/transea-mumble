@@ -29,9 +29,9 @@ PODS:
     - FBSDKLoginKit (~> 4.10)
     - FBSDKTVOSKit (~> 4.10)
     - Parse (~> 1.12)
-  - Realm (2.6.1):
-    - Realm/Headers (= 2.6.1)
-  - Realm/Headers (2.6.1)
+  - Realm (2.6.2):
+    - Realm/Headers (= 2.6.2)
+  - Realm/Headers (2.6.2)
   - RMQClient (0.10.0):
     - CocoaAsyncSocket (~> 7.4.0)
     - JKVValue
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   JKVValue: 3a6bb1f0c02fb98404835ab5620327dfda48561e
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
-  Realm: 9abfd4f87519376daa5ae3a4603155de408bf8b3
+  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   RMQClient: e9bfea2d08f151b6b12df82ad115c78bd8de2106
   SBJson: af3137ccda22be3004487524da0a071c75d4251b
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
