@@ -1,0 +1,6 @@
+framework module Pods_Mumble {
+  umbrella header "Pods-Mumble-umbrella.h"
+
+  export *
+  module * { export * }
+}
