@@ -1,5 +1,13 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
 #endif
 
 #import "RMQAllocatedChannel.h"
@@ -18,6 +26,7 @@
 #import "RMQConnectionRecover.h"
 #import "RMQConnectionRecovery.h"
 #import "RMQConsumer.h"
+#import "RMQConsumerDeliveryHandler.h"
 #import "RMQConsumerHandlers.h"
 #import "RMQDispatcher.h"
 #import "RMQErrors.h"
