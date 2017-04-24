@@ -33,8 +33,8 @@
     
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
     
-    [_fieldUserName setDelegate:self];
-    [_fieldUserPassword setDelegate:self];
+   // [_fieldUserName setDelegate:self];
+   // [_fieldUserPassword setDelegate:self];
     
     [[_btnSignUp layer] setBorderWidth:2.0f];
     [[_btnSignUp layer] setBorderColor:[UIColor colorWithRed:214.0f/255.0f
