@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Realm
+
 class Translator: NSObject {
     var userName: String = ""
     var rating: NSNumber?

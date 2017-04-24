@@ -13,6 +13,8 @@
 		0255C1901EAD268B0093A117 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255C18F1EAD268B0093A117 /* Translator.swift */; };
 		0255C1921EAD26A50093A117 /* TransVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255C1911EAD26A50093A117 /* TransVC.swift */; };
 		0255C1941EAD26B80093A117 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255C1931EAD26B80093A117 /* UserVC.swift */; };
+		025909A81EAD359C00F4E446 /* CallHistoryObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 025909A61EAD359C00F4E446 /* CallHistoryObj.m */; };
+		025909A91EAD359C00F4E446 /* Translator.m in Sources */ = {isa = PBXBuildFile; fileRef = 025909A71EAD359C00F4E446 /* Translator.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -246,6 +248,10 @@
 		0255C18F1EAD268B0093A117 /* Translator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Translator.swift; path = NCCU/Translator.swift; sourceTree = "<group>"; };
 		0255C1911EAD26A50093A117 /* TransVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransVC.swift; path = NCCU/TransVC/TransVC.swift; sourceTree = "<group>"; };
 		0255C1931EAD26B80093A117 /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserVC.swift; path = NCCU/UserVC/UserVC.swift; sourceTree = "<group>"; };
+		025909A61EAD359C00F4E446 /* CallHistoryObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CallHistoryObj.m; path = NCCU/CallHistoryObj.m; sourceTree = "<group>"; };
+		025909A71EAD359C00F4E446 /* Translator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Translator.m; path = NCCU/Translator.m; sourceTree = "<group>"; };
+		02F1F53B1EAD343A00BBD38E /* CallHistoryObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CallHistoryObj.h; path = NCCU/CallHistoryObj.h; sourceTree = "<group>"; };
+		02F1F53D1EAD348800BBD38E /* Translator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Translator.h; path = NCCU/Translator.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Mumble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mumble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -1091,6 +1097,10 @@
 			children = (
 				0255C18F1EAD268B0093A117 /* Translator.swift */,
 				0255C18B1EAD265A0093A117 /* CallHistoryObj.swift */,
+				02F1F53D1EAD348800BBD38E /* Translator.h */,
+				025909A61EAD359C00F4E446 /* CallHistoryObj.m */,
+				025909A71EAD359C00F4E446 /* Translator.m */,
+				02F1F53B1EAD343A00BBD38E /* CallHistoryObj.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -1495,6 +1505,7 @@
 				286E9260148452A000B13593 /* MUVoiceActivitySetupViewController.m in Sources */,
 				28BE998818CFCDE600910551 /* MUServerTableViewCell.m in Sources */,
 				2822AC0614878AC500E9DB17 /* MUConnectionController.m in Sources */,
+				025909A91EAD359C00F4E446 /* Translator.m in Sources */,
 				28F04B2214898A7100C90909 /* MUAdvancedAudioPreferencesViewController.m in Sources */,
 				28ADA303148A3E3B00C55E51 /* MUAudioQualityPreferencesViewController.m in Sources */,
 				2879523714BF519A00567430 /* MUMessagesViewController.m in Sources */,
@@ -1504,6 +1515,7 @@
 				287952B014C4D67500567430 /* MUMessageRecipientViewController.m in Sources */,
 				287A686F14C76E56008B1BE7 /* MUMessageAttachmentViewController.m in Sources */,
 				B50CC3F11D6CEF0B00A076D0 /* CallHistory.m in Sources */,
+				025909A81EAD359C00F4E446 /* CallHistoryObj.m in Sources */,
 				B50CC3F41D6CEF2700A076D0 /* HistoryCellTableViewCell.m in Sources */,
 				287A687414C777CC008B1BE7 /* GTMStringEncoding.m in Sources */,
 				2802AC0014C9E948000983A5 /* MUDataURL.m in Sources */,
