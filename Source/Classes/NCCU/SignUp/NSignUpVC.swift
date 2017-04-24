@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpVC: UIViewController {
+class NSignUpVC: UIViewController {
 
     @IBOutlet var fieldUserName: UITextField!
     @IBOutlet var fieldUserPassword: UITextField!
