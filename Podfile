@@ -19,5 +19,9 @@ pod 'Parse', '~> 1.13.0'
 pod 'ParseFacebookUtilsV4', '~> 1.11.1'
 pod 'SBJson', '~> 4.0.0'
 pod 'DebugKit'
+#pod "FBSDKCoreKit"
+#pod "FBSDKLoginKit"
+#pod "FBSDKShareKit"
+#pod 'ParseFacebookUtils'
 
 end

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
-#import <DebugKit/DebugKit.h>
-#import <Parse/PFQuery.h>
+#import "DebugKit.h"
+#import "PFQuery.h"
 
 @interface MainVC : UIViewController
 

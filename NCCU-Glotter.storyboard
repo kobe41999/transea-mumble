@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M5W-ou-Img">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M5W-ou-Img">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -189,7 +189,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Your Expert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="446-2V-3NE">
-                                <rect key="frame" x="66" y="10" width="129" height="21"/>
+                                <rect key="frame" x="66" y="10" width="128.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -349,7 +349,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                                 <state key="normal" title="SIGN UP"/>
                                 <connections>
-                                    <segue destination="Heh-ie-kwz" kind="show" id="T9n-9X-9hU"/>
+                                    <segue destination="Heh-ie-kwz" kind="show" animates="NO" id="brh-Yq-aw3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pN-ZR-JzO">
@@ -513,14 +513,14 @@
                                         <rect key="frame" x="0.0" y="272" width="375" height="331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gya-Jo-e7L">
-                                                <rect key="frame" x="0.0" y="0.0" width="188" height="166"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="165.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2z-3Q-5QB">
                                                         <rect key="frame" x="0.0" y="0.0" width="188" height="33"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_ask_expert" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-e7-0wZ">
-                                                        <rect key="frame" x="57" y="33" width="75" height="75"/>
+                                                        <rect key="frame" x="56" y="33" width="75" height="75"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="UZu-e7-0wZ" secondAttribute="height" multiplier="1:1" id="j1z-8u-mJS"/>
                                                         </constraints>
@@ -532,7 +532,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5B2-8F-4uL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="188" height="166"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="188" height="165.5"/>
                                                         <connections>
                                                             <segue destination="96M-y8-Yqi" kind="push" id="5qq-Yy-FIF"/>
                                                         </connections>
@@ -563,20 +563,20 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2L-oB-y2f">
-                                                <rect key="frame" x="0.0" y="166" width="187" height="165"/>
+                                                <rect key="frame" x="0.0" y="165.5" width="187.5" height="165.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6R-te-9hn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="33"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_owl" translatesAutoresizingMaskIntoConstraints="NO" id="ELm-bt-DMF">
-                                                        <rect key="frame" x="56" y="33" width="74" height="74"/>
+                                                        <rect key="frame" x="56" y="33" width="74.5" height="74.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ELm-bt-DMF" secondAttribute="height" multiplier="1:1" id="97l-EJ-YsA"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oku-DJ-2hZ">
-                                                        <rect key="frame" x="0.0" y="117" width="187" height="21"/>
+                                                        <rect key="frame" x="0.0" y="117.5" width="187.5" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -598,14 +598,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjD-7c-c4a">
-                                                <rect key="frame" x="187" y="0.0" width="188" height="166"/>
+                                                <rect key="frame" x="187" y="0.0" width="188" height="165.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgG-sj-pjL">
                                                         <rect key="frame" x="0.0" y="0.0" width="188" height="33"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mosque" translatesAutoresizingMaskIntoConstraints="NO" id="uJg-pX-NPA">
-                                                        <rect key="frame" x="57" y="33" width="75" height="75"/>
+                                                        <rect key="frame" x="56" y="33" width="75" height="75"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="uJg-pX-NPA" secondAttribute="height" multiplier="1:1" id="n8C-bX-sLy"/>
                                                         </constraints>
@@ -641,20 +641,20 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMa-rH-3rR">
-                                                <rect key="frame" x="188" y="166" width="187" height="165"/>
+                                                <rect key="frame" x="187.5" y="165.5" width="187.5" height="165.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-A4-7gW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="33"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_elephant" translatesAutoresizingMaskIntoConstraints="NO" id="xTb-Ur-BCw">
-                                                        <rect key="frame" x="56" y="33" width="74" height="74"/>
+                                                        <rect key="frame" x="56" y="33" width="74.5" height="74.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xTb-Ur-BCw" secondAttribute="height" multiplier="1:1" id="loa-wA-6dN"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-AQ-NxU">
-                                                        <rect key="frame" x="0.0" y="117" width="187" height="21"/>
+                                                        <rect key="frame" x="0.0" y="117.5" width="187.5" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -798,11 +798,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ka7-CA-kQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="737" y="705"/>
-=======
-            <point key="canvasLocation" x="740" y="770"/>
->>>>>>> 2fc94e14b6e0119cbf3df8c489e52ab12f613e7a
         </scene>
         <!--UserVC-->
         <scene sceneID="kxP-Cr-jKs">
@@ -832,7 +828,7 @@
                                 <rect key="frame" x="242" y="40" width="133" height="109"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfG-rF-yOy">
-                                        <rect key="frame" x="42" y="78" width="51" height="31"/>
+                                        <rect key="frame" x="41.5" y="78" width="51" height="31"/>
                                         <connections>
                                             <action selector="onSwitch:" destination="Ayz-JD-bCn" eventType="valueChanged" id="Ot1-CD-6Ge"/>
                                         </connections>
@@ -911,13 +907,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aO-7p-Uyb">
-                                            <rect key="frame" x="276" y="21" width="44" height="21"/>
+                                            <rect key="frame" x="276" y="21.5" width="43.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KjJ-IV-O5I" customClass="HCSStarRatingView">
-                                            <rect key="frame" x="190" y="42" width="140" height="37"/>
+                                            <rect key="frame" x="190" y="42.5" width="140" height="37"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016/1/1/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLX-4k-5Fg">
@@ -965,7 +961,7 @@
         <!--Sign UpVC-->
         <scene sceneID="9xb-uS-EUR">
             <objects>
-                <viewController id="Heh-ie-kwz" customClass="NSignUpVC" customModule="Mumble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Heh-ie-kwz" customClass="SignUpVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oCn-9L-xiX"/>
                         <viewControllerLayoutGuide type="bottom" id="QAa-xP-dpq"/>
@@ -1008,7 +1004,7 @@
                                             <color key="titleColor" red="0.83921568627450982" green="0.8666666666666667" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="onSignUp:" destination="Heh-ie-kwz" eventType="touchUpInside" id="0Yj-8g-2Mq"/>
+                                            <action selector="onSignUp:" destination="Heh-ie-kwz" eventType="touchUpInside" id="LaI-rA-9TP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-FY-fJX">
@@ -1018,7 +1014,7 @@
                                             <color key="titleColor" red="0.83921568627450982" green="0.8666666666666667" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="onLogin:" destination="Heh-ie-kwz" eventType="touchUpInside" id="4Sa-TH-80w"/>
+                                            <action selector="onLogin:" destination="Heh-ie-kwz" eventType="touchUpInside" id="Bwh-fG-zov"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXZ-dX-V5f">
@@ -1067,11 +1063,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnLogin" destination="Lco-FY-fJX" id="Xss-VS-8e1"/>
-                        <outlet property="btnSignUp" destination="Cab-ie-bRc" id="par-ZZ-J2S"/>
-                        <outlet property="fieldMessage" destination="JHV-yJ-LcJ" id="LgD-1x-7ki"/>
-                        <outlet property="fieldUserName" destination="cF7-Ck-yH4" id="aW1-eO-rD1"/>
-                        <outlet property="fieldUserPassword" destination="1JB-PA-mSp" id="FCe-K0-MiK"/>
+                        <outlet property="btnLogin" destination="Lco-FY-fJX" id="Uyo-b1-3W9"/>
+                        <outlet property="btnSignUp" destination="Cab-ie-bRc" id="8X8-PP-7S3"/>
+                        <outlet property="fieldMessage" destination="JHV-yJ-LcJ" id="AGf-Ke-9PQ"/>
+                        <outlet property="fieldUserName" destination="cF7-Ck-yH4" id="zq1-WR-MGa"/>
+                        <outlet property="fieldUserPassword" destination="1JB-PA-mSp" id="VQV-pf-w80"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vk-k4-we2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1199,7 +1195,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_boy" translatesAutoresizingMaskIntoConstraints="NO" id="wiO-c7-8dP">
-                                            <rect key="frame" x="10" y="20" width="33" height="33"/>
+                                            <rect key="frame" x="10" y="20" width="34" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="wiO-c7-8dP" secondAttribute="height" multiplier="1:1" id="gqo-TK-ZhX"/>
                                             </constraints>
@@ -1291,7 +1287,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="5au-uP-QLD">
-                                            <rect key="frame" x="10" y="20" width="33" height="33"/>
+                                            <rect key="frame" x="10" y="20" width="34" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="5au-uP-QLD" secondAttribute="height" multiplier="1:1" id="LT3-fG-h0d"/>
                                             </constraints>

@@ -20,7 +20,7 @@
 #import <MumbleKit/MKAudio.h>
 #import <MumbleKit/MKVersion.h>
 #import <Parse/Parse.h>
-#import <DeviceUtil/DeviceUtil.h>
+#import "DeviceUtil.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import "IQKeyboardManager.h"
