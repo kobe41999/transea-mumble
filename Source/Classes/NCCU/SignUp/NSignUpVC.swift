@@ -82,6 +82,8 @@ class NSignUpVC: UIViewController {
             
         })
     }
+    
+    
     @IBAction func onLogin(_ sender: UIButton) {
         if(!self.IsValidEmail(checkString: self.fieldUserName.text!)){
             self.fieldMessage.text="Invalid Email Address"

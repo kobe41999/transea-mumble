@@ -26,4 +26,3 @@
 #import <Parse/Parse.h>
 #import <DeviceUtil/DeviceUtil.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
-//#import "RatePopUp.swift"

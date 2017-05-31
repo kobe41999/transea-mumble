@@ -16,7 +16,7 @@
 #import "MHTabBarSegue.h"
 #import <STPopup/STPopup.h>
 #import "AppDelegate.h"
-//#import "RatePopUp.swift"
+#import "RatePopUp.h"
 
 
 NSString *const TransVCChangedNotification = @"TransVCChangedNotification";
