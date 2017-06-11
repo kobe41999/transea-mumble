@@ -189,13 +189,8 @@
 		28FAA35F14D74C1600F6D711 /* SmallMumbleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28FAA35D14D74C1600F6D711 /* SmallMumbleIcon.png */; };
 		28FAA36014D74C1600F6D711 /* SmallMumbleIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28FAA35E14D74C1600F6D711 /* SmallMumbleIcon@2x.png */; };
 		28FAA36414D7551600F6D711 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FAA36314D7551600F6D711 /* MKNumberBadgeView.m */; };
-		2E4E60B91EDEC3840059D338 /* RatePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E60B81EDEC3840059D338 /* RatePopUp.swift */; };
-		2E4E60BD1EDEC3AB0059D338 /* CallHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E60BA1EDEC3AB0059D338 /* CallHistory.swift */; };
-		2E4E60BE1EDEC3AB0059D338 /* CallHistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E60BB1EDEC3AB0059D338 /* CallHistVC.swift */; };
-		2E4E60BF1EDEC3AB0059D338 /* HistoryCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E60BC1EDEC3AB0059D338 /* HistoryCellTableViewCell.swift */; };
-		2E4E60C11EDEC3CE0059D338 /* AskExpertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E60C01EDEC3CE0059D338 /* AskExpertVC.swift */; };
-		2E4E60C31EDEC3E30059D338 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E60C21EDEC3E30059D338 /* UserVC.swift */; };
-		2EBDF0821EDEC4E8000DB3E6 /* NSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDF0811EDEC4E8000DB3E6 /* NSignUpVC.swift */; };
+		2E86CB3A1EDEBF23009110EF /* PopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E86CB371EDEBF23009110EF /* PopUpVC.m */; };
+		2E86CB3B1EDEBF23009110EF /* RatePopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E86CB391EDEBF23009110EF /* RatePopUp.m */; };
 		2ED180931EDEA50500488C7A /* VoiceCallingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED180921EDEA50500488C7A /* VoiceCallingVC.swift */; };
 		2ED180951EDEA5E000488C7A /* TransVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED180941EDEA5E000488C7A /* TransVC.swift */; };
 		2ED180981EDEA63200488C7A /* CallHistoryObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED180961EDEA63200488C7A /* CallHistoryObj.swift */; };
@@ -208,6 +203,13 @@
 		2ED180CD1EDEAE8100488C7A /* setbottt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED180C81EDEAE8100488C7A /* setbottt.png */; };
 		2ED180CE1EDEAE8100488C7A /* settingbd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED180C91EDEAE8100488C7A /* settingbd.png */; };
 		2ED180CF1EDEAE8100488C7A /* settingtopic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED180CA1EDEAE8100488C7A /* settingtopic.png */; };
+		2ED180D11EDEB8D100488C7A /* NSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED180D01EDEB8D100488C7A /* NSignUpVC.swift */; };
+		2EEC4A811EDEBAF700412B5C /* NCallHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC4A801EDEBAF700412B5C /* NCallHistory.swift */; };
+		2EEC4A831EDEBB5200412B5C /* NUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC4A821EDEBB5200412B5C /* NUserVC.swift */; };
+		2EEC4A861EDEBBA600412B5C /* NCallHistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC4A841EDEBBA600412B5C /* NCallHistVC.swift */; };
+		2EEC4A871EDEBBA600412B5C /* NHistoryCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC4A851EDEBBA600412B5C /* NHistoryCellTableViewCell.swift */; };
+		2EEC4A891EDEBBCB00412B5C /* NAskExpertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC4A881EDEBBCB00412B5C /* NAskExpertVC.swift */; };
+		2EEC4A8B1EDEBC0300412B5C /* NRatePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC4A8A1EDEBC0300412B5C /* NRatePopUp.swift */; };
 		B581500A1D60B23B000A2152 /* MHCustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58150051D60B23B000A2152 /* MHCustomTabBarController.m */; };
 		B581500B1D60B23B000A2152 /* MHTabBarSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B58150091D60B23B000A2152 /* MHTabBarSegue.m */; };
 		B581504C1D60E58E000A2152 /* Glotter-assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B581504B1D60E58E000A2152 /* Glotter-assets.xcassets */; };
@@ -507,13 +509,10 @@
 		28FAA36214D7551600F6D711 /* MKNumberBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKNumberBadgeView.h; path = Dependencies/MKNumberBadgeView/MKNumberBadgeView.h; sourceTree = "<group>"; };
 		28FAA36314D7551600F6D711 /* MKNumberBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKNumberBadgeView.m; path = Dependencies/MKNumberBadgeView/MKNumberBadgeView.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
-		2E4E60B81EDEC3840059D338 /* RatePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatePopUp.swift; path = NCCU/PopUp/RatePopUp.swift; sourceTree = "<group>"; };
-		2E4E60BA1EDEC3AB0059D338 /* CallHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CallHistory.swift; path = NCCU/CallHistory/CallHistory.swift; sourceTree = "<group>"; };
-		2E4E60BB1EDEC3AB0059D338 /* CallHistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CallHistVC.swift; path = NCCU/CallHistory/CallHistVC.swift; sourceTree = "<group>"; };
-		2E4E60BC1EDEC3AB0059D338 /* HistoryCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryCellTableViewCell.swift; path = NCCU/CallHistory/HistoryCellTableViewCell.swift; sourceTree = "<group>"; };
-		2E4E60C01EDEC3CE0059D338 /* AskExpertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AskExpertVC.swift; path = NCCU/AskExpert/AskExpertVC.swift; sourceTree = "<group>"; };
-		2E4E60C21EDEC3E30059D338 /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserVC.swift; path = NCCU/UserVC/UserVC.swift; sourceTree = "<group>"; };
-		2EBDF0811EDEC4E8000DB3E6 /* NSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSignUpVC.swift; path = NCCU/SignUp/NSignUpVC.swift; sourceTree = "<group>"; };
+		2E86CB361EDEBF23009110EF /* PopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopUpVC.h; path = NCCU/PopUp/PopUpVC.h; sourceTree = "<group>"; };
+		2E86CB371EDEBF23009110EF /* PopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopUpVC.m; path = NCCU/PopUp/PopUpVC.m; sourceTree = "<group>"; };
+		2E86CB381EDEBF23009110EF /* RatePopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatePopUp.h; path = NCCU/PopUp/RatePopUp.h; sourceTree = "<group>"; };
+		2E86CB391EDEBF23009110EF /* RatePopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatePopUp.m; path = NCCU/PopUp/RatePopUp.m; sourceTree = "<group>"; };
 		2ED180901EDEA50100488C7A /* Mumble-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mumble-Bridging-Header.h"; sourceTree = "<group>"; };
 		2ED180921EDEA50500488C7A /* VoiceCallingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceCallingVC.swift; path = NCCU/VoiceCallingVC.swift; sourceTree = "<group>"; };
 		2ED180941EDEA5E000488C7A /* TransVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransVC.swift; path = NCCU/TransVC/TransVC.swift; sourceTree = "<group>"; };
@@ -527,6 +526,13 @@
 		2ED180C81EDEAE8100488C7A /* setbottt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setbottt.png; path = Resources/setbottt.png; sourceTree = "<group>"; };
 		2ED180C91EDEAE8100488C7A /* settingbd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingbd.png; path = Resources/settingbd.png; sourceTree = "<group>"; };
 		2ED180CA1EDEAE8100488C7A /* settingtopic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingtopic.png; path = Resources/settingtopic.png; sourceTree = "<group>"; };
+		2ED180D01EDEB8D100488C7A /* NSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSignUpVC.swift; path = NCCU/SignUp/NSignUpVC.swift; sourceTree = "<group>"; };
+		2EEC4A801EDEBAF700412B5C /* NCallHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NCallHistory.swift; path = NCCU/CallHistory/NCallHistory.swift; sourceTree = "<group>"; };
+		2EEC4A821EDEBB5200412B5C /* NUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NUserVC.swift; path = NCCU/UserVC/NUserVC.swift; sourceTree = "<group>"; };
+		2EEC4A841EDEBBA600412B5C /* NCallHistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NCallHistVC.swift; path = NCCU/CallHistory/NCallHistVC.swift; sourceTree = "<group>"; };
+		2EEC4A851EDEBBA600412B5C /* NHistoryCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NHistoryCellTableViewCell.swift; path = NCCU/CallHistory/NHistoryCellTableViewCell.swift; sourceTree = "<group>"; };
+		2EEC4A881EDEBBCB00412B5C /* NAskExpertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NAskExpertVC.swift; path = NCCU/AskExpert/NAskExpertVC.swift; sourceTree = "<group>"; };
+		2EEC4A8A1EDEBC0300412B5C /* NRatePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NRatePopUp.swift; path = NCCU/PopUp/NRatePopUp.swift; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Mumble.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mumble.pch; path = Source/Mumble.pch; sourceTree = "<group>"; };
 		64EA90219C6E30CF41AFB921 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6AF8D4EFBB0152CE3AA38A84 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1032,9 +1038,9 @@
 		B50CC3ED1D6CEED600A076D0 /* CallHistory */ = {
 			isa = PBXGroup;
 			children = (
-				2E4E60BA1EDEC3AB0059D338 /* CallHistory.swift */,
-				2E4E60BB1EDEC3AB0059D338 /* CallHistVC.swift */,
-				2E4E60BC1EDEC3AB0059D338 /* HistoryCellTableViewCell.swift */,
+				2EEC4A801EDEBAF700412B5C /* NCallHistory.swift */,
+				2EEC4A841EDEBBA600412B5C /* NCallHistVC.swift */,
+				2EEC4A851EDEBBA600412B5C /* NHistoryCellTableViewCell.swift */,
 			);
 			name = CallHistory;
 			sourceTree = "<group>";
@@ -1042,7 +1048,7 @@
 		B5814FF21D609D0A000A2152 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				2EBDF0811EDEC4E8000DB3E6 /* NSignUpVC.swift */,
+				2ED180D01EDEB8D100488C7A /* NSignUpVC.swift */,
 			);
 			name = SignUp;
 			sourceTree = "<group>";
@@ -1071,7 +1077,7 @@
 		B5814FFD1D60B04D000A2152 /* UserVC */ = {
 			isa = PBXGroup;
 			children = (
-				2E4E60C21EDEC3E30059D338 /* UserVC.swift */,
+				2EEC4A821EDEBB5200412B5C /* NUserVC.swift */,
 			);
 			name = UserVC;
 			sourceTree = "<group>";
@@ -1080,7 +1086,11 @@
 			isa = PBXGroup;
 			children = (
 				2ED180BC1EDEA99A00488C7A /* PopUpVC.swift */,
-				2E4E60B81EDEC3840059D338 /* RatePopUp.swift */,
+				2E86CB361EDEBF23009110EF /* PopUpVC.h */,
+				2E86CB371EDEBF23009110EF /* PopUpVC.m */,
+				2E86CB381EDEBF23009110EF /* RatePopUp.h */,
+				2E86CB391EDEBF23009110EF /* RatePopUp.m */,
+				2EEC4A8A1EDEBC0300412B5C /* NRatePopUp.swift */,
 			);
 			name = PopUp;
 			sourceTree = "<group>";
@@ -1128,7 +1138,7 @@
 		B5FF00821D6C9E2D0087FE5D /* AskExpert */ = {
 			isa = PBXGroup;
 			children = (
-				2E4E60C01EDEC3CE0059D338 /* AskExpertVC.swift */,
+				2EEC4A881EDEBBCB00412B5C /* NAskExpertVC.swift */,
 			);
 			name = AskExpert;
 			sourceTree = "<group>";
@@ -1443,14 +1453,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E4E60BE1EDEC3AB0059D338 /* CallHistVC.swift in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				2E4E60B91EDEC3840059D338 /* RatePopUp.swift in Sources */,
 				2861C276116BE905002B8514 /* MUApplicationDelegate.m in Sources */,
 				2861C27B116BE905002B8514 /* MUPublicServerList.m in Sources */,
 				2ED180C31EDEA9C200488C7A /* TransTableVC.swift in Sources */,
 				2861C27C116BE905002B8514 /* MUPublicServerListController.m in Sources */,
-				2E4E60C11EDEC3CE0059D338 /* AskExpertVC.swift in Sources */,
 				2861C281116BE905002B8514 /* MUWelcomeScreenPhone.m in Sources */,
 				28F9174811B946250030D649 /* FMDatabase.m in Sources */,
 				2ED180931EDEA50500488C7A /* VoiceCallingVC.swift in Sources */,
@@ -1461,27 +1468,28 @@
 				287BA34011B97EEE0010E031 /* MUFavouriteServerListController.m in Sources */,
 				2ED180991EDEA63200488C7A /* Translator.swift in Sources */,
 				287BA3A611B996D90010E031 /* MUFavouriteServerEditViewController.m in Sources */,
+				2E86CB3A1EDEBF23009110EF /* PopUpVC.m in Sources */,
 				28C6EF0A11BBF38100E426C8 /* MUCountryServerListController.m in Sources */,
 				B5EA66DE1D47621000A5FA24 /* MainVC.m in Sources */,
 				289D254C11BC28BC00E39F2C /* MULanServerListController.m in Sources */,
+				2EEC4A871EDEBBA600412B5C /* NHistoryCellTableViewCell.swift in Sources */,
 				2801C35B11CA9F1A00E664E8 /* MUPreferencesViewController.m in Sources */,
 				287639F911D29D99009DB8B6 /* MUCertificateCreationProgressView.m in Sources */,
 				2858DBA31233E31B000D6F75 /* MUVersionChecker.m in Sources */,
+				2EEC4A891EDEBBCB00412B5C /* NAskExpertVC.swift in Sources */,
 				2858A5AD123BA08D00A82155 /* MUCertificateCell.m in Sources */,
 				2882858118CE40C80034F319 /* MUBackgroundView.m in Sources */,
 				288D6B60123D08EE00D37EDE /* MUCertificateViewController.m in Sources */,
 				28942D7C12456F9200C63A07 /* MUCertificateCreationView.m in Sources */,
 				288B55E01252903300563A28 /* MUServerCertificateTrustViewController.m in Sources */,
 				289CBA18125693040015E58E /* MUServerViewController.m in Sources */,
-				2E4E60C31EDEC3E30059D338 /* UserVC.swift in Sources */,
 				2838EA0F129316C200035C5D /* MUCertificatePreferencesViewController.m in Sources */,
 				282F6A2513620BD5008F555B /* MUCertificateController.m in Sources */,
 				28F019911364585C00E402F6 /* MUServerCell.m in Sources */,
 				28BF81D2139AFFD50078B722 /* MUCertificateDiskImportViewController.m in Sources */,
 				280D9ADA13EAFAAE003B64A0 /* MUServerRootViewController.m in Sources */,
 				283363DB13EF154C00A04F04 /* MUAudioTransmissionPreferencesViewController.m in Sources */,
-				2E4E60BF1EDEC3AB0059D338 /* HistoryCellTableViewCell.swift in Sources */,
-				2E4E60BD1EDEC3AB0059D338 /* CallHistory.swift in Sources */,
+				2EEC4A831EDEBB5200412B5C /* NUserVC.swift in Sources */,
 				28A2AEC114788BE300F3B83F /* MUColor.m in Sources */,
 				28F79C70147973D60003B8BA /* MUUserStateAcessoryView.m in Sources */,
 				28F79C73147991490003B8BA /* MUAccessTokenViewController.m in Sources */,
@@ -1495,6 +1503,8 @@
 				28F08365147F369200DC126F /* MUAudioBarViewCell.m in Sources */,
 				286E9260148452A000B13593 /* MUVoiceActivitySetupViewController.m in Sources */,
 				28BE998818CFCDE600910551 /* MUServerTableViewCell.m in Sources */,
+				2E86CB3B1EDEBF23009110EF /* RatePopUp.m in Sources */,
+				2EEC4A8B1EDEBC0300412B5C /* NRatePopUp.swift in Sources */,
 				2822AC0614878AC500E9DB17 /* MUConnectionController.m in Sources */,
 				28F04B2214898A7100C90909 /* MUAdvancedAudioPreferencesViewController.m in Sources */,
 				28ADA303148A3E3B00C55E51 /* MUAudioQualityPreferencesViewController.m in Sources */,
@@ -1520,9 +1530,11 @@
 				286A3CA4158CCF9F00C817D1 /* MUWelcomeScreenPad.m in Sources */,
 				286A3CBE158CFDF300C817D1 /* MUPopoverBackgroundView.m in Sources */,
 				28F9E1BF15EBDF2400D52001 /* MURemoteControlServer.m in Sources */,
+				2EEC4A861EDEBBA600412B5C /* NCallHistVC.swift in Sources */,
 				2813B1D115EBFDA90049A59A /* MURemoteControlPreferencesViewController.m in Sources */,
-				2EBDF0821EDEC4E8000DB3E6 /* NSignUpVC.swift in Sources */,
 				285D6B7116BEEFA700F239EB /* MUTextMessageProcessor.m in Sources */,
+				2ED180D11EDEB8D100488C7A /* NSignUpVC.swift in Sources */,
+				2EEC4A811EDEBAF700412B5C /* NCallHistory.swift in Sources */,
 				2ED180BE1EDEA99A00488C7A /* PopUpVC.swift in Sources */,
 				2846C7D616F4A09000739FD8 /* MUServerButton.m in Sources */,
 			);
