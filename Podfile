@@ -3,6 +3,8 @@ platform :ios, '8.0'
 # Uncomment this line if you're using Swift
  use_frameworks!
 
+target ‘Mumble’ do
+
 pod 'IQKeyboardManager'
 
 pod "JKVValue", "~> 1.3.0"
@@ -23,3 +25,5 @@ pod 'DebugKit'
 #pod "FBSDKLoginKit"
 #pod "FBSDKShareKit"
 #pod 'ParseFacebookUtils'
+
+end
